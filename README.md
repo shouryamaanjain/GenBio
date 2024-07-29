@@ -47,8 +47,6 @@ cd genbio
 npm install
 ```
 
-```Rename .env.example to .env and fill the required fields```
-
 ```bash
 npm run dev
 ```
