@@ -15,14 +15,6 @@ GenBio is built with:
 
 ## Getting Started
 
-### Prerequisites
-
-<a href="https://git-scm.com/downloads">Git</a> is a distributed version control system used for software development. It allows multiple developers to work on the same codebase simultaneously, keeping track of changes and managing versions. It also enables users to revert changes and collaborate more effectively.
-
-<a href="https://nodejs.org/en">Node.js</a> is a free, open-source, cross-platform JavaScript runtime environment that lets developers create servers, web apps, command line tools and scripts.
-
-### Installation
-
 Open your terminal, and run the following commands -
 
 ```bash
