@@ -1,4 +1,4 @@
-# GenBio - A Bio Generator
+# GenBio - AI Bio Generator
 
 ## About The Project
 
