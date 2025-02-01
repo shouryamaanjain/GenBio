@@ -47,7 +47,7 @@ Each bio must clearly communicate:
 ### **Response Format (Compulsory JSON Output)**  
 Your response **must be in JSON format only** and structured as follows:  
 
-```json
+\`
 {
   "bios": [
     "Bio option 1 (120-160 characters)",
@@ -56,18 +56,15 @@ Your response **must be in JSON format only** and structured as follows:
     "Bio option 4 (120-160 characters)"
   ]
 }
-```  
+\`
 
 **DO NOT:**  
 - **Provide any explanations or descriptions.** Directly return the JSON output.  
-- **Use markdown (` ``` `) formatting.** The response must be **pure JSON** with no additional text.  
+- **Use markdown formatting (\` \`\` \`).** The response must be **pure JSON** with no additional text.  
 - **Generate fewer than four bio options.** Providing at least four unique options is mandatory.  
 
-By following these **detailed and strict instructions**, you will generate high-quality Twitter bios that align with the user’s expectations and branding.
-  
-Do not include any description, do not include the \`\`\`.
-  Code (no \`\`\`):
-  `;
+By following these **detailed and strict instructions**, you will generate high-quality Twitter bios that align with the user’s expectations and branding.  
+`;
 
 export async function generateBio(
   input: string,
@@ -82,17 +79,13 @@ export async function generateBio(
     finishReason,
     rawResponse,
   } = await generateObject({
-    model: groq(model),
+    model, // Fixed incorrect groq(model) call
     system: systemPrompt,
     prompt: input,
     temperature: temperature,
     maxTokens: 1024,
     schema: z.object({
-      data: z.array(
-        z.object({
-          bio: z.string().describe("Add generated bio here!"),
-        })
-      ),
+      bios: z.array(z.string().describe("Generated bio options")),
     }),
   });
 
