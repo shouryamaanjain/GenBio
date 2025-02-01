@@ -79,7 +79,7 @@ export async function generateBio(
     finishReason,
     rawResponse,
   } = await generateObject({
-    model, // Fixed incorrect groq(model) call
+    model: groq(model), // Corrected: Wrap the model string with groq() to match LanguageModelV1
     system: systemPrompt,
     prompt: input,
     temperature: temperature,
