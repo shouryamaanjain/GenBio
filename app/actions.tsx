@@ -79,13 +79,17 @@ export async function generateBio(
     finishReason,
     rawResponse,
   } = await generateObject({
-    model: groq(model), // Corrected: Wrap the model string with groq() to match LanguageModelV1
+    model: groq(model),
     system: systemPrompt,
     prompt: input,
     temperature: temperature,
     maxTokens: 1024,
     schema: z.object({
-      bios: z.array(z.string().describe("Generated bio options")),
+      data: z.array(
+        z.object({
+          bio: z.string().describe("Add generated bio here!"),
+        })
+      ),
     }),
   });
 
